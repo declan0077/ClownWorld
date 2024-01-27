@@ -13,11 +13,14 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     public int Collected;
+    [SerializeField]
+    public GameObject emote;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        baseSpeed = 6000;
     }
 
     void Update()

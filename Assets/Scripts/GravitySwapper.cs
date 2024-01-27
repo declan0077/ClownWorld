@@ -20,21 +20,24 @@ public class GravitySwapper : MonoBehaviour
         AudioPlayer = GetComponent<AudioSource>();
     }
 
-    
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKey(KeyCode.E))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            if (!Waitplease)
+            player = collision.gameObject;
+            player.GetComponent<PlayerMovement>().emote.SetActive(true);
+            if (Input.GetKey(KeyCode.E))
             {
-                StartCoroutine(Wait());
-                if (collision.gameObject.CompareTag("Player"))
+                if (!Waitplease)
                 {
+                    StartCoroutine(Wait());
+
                     if (isrotating == false)
                     {
 
                         playerTransform = collision.transform;
-                        player = collision.gameObject;
+                    
                         targetAngle = playerTransform.eulerAngles.z + angle;
                         rotate = true;
                         collision.gameObject.GetComponent<TransformJump>().gravityScale = 0;
@@ -44,12 +47,21 @@ public class GravitySwapper : MonoBehaviour
                         player.GetComponent<PlayerMovement>().baseSpeed = 0;
                         player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                     }
+                
+                }
+                else
+                {
+                    player.GetComponent<PlayerMovement>().emote.SetActive(false);
                 }
             }
         }
-       
-       
+        else
+        {
+            player.GetComponent<PlayerMovement>().emote.SetActive(false);
+        }
     }
+
+
 
     private void Update()
     {
@@ -75,6 +87,7 @@ public class GravitySwapper : MonoBehaviour
     {
         Waitplease = true;
         yield return new WaitForSeconds(1f);
+        player.GetComponent<PlayerMovement>().emote.SetActive(false);
         Waitplease = false;
 
     }
