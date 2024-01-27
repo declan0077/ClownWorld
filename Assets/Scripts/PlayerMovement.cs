@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private GroundCheck check;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    public int Collected;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,13 +44,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Approximately(horizontalInput, 0f))
         {
-            rb.velocity = Vector2.zero;
+          //  rb.velocity = Vector2.zero;
            
         }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
         {
 
-            rb.velocity = Vector2.zero;
+          //  rb.velocity = Vector2.zero;
             GetComponent<TransformJump>().enabled = true;
         }
 

@@ -319,10 +319,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 4792467200461921555}
-  jumpForce: 20
+  jumpForce: 40
   gravity: -9.81
-  gravityScale: 5
-  Jump: {fileID: 0}
+  gravityScale: 8
+  Jump: {fileID: 8300000, guid: 6d28c78e0b81a714c8303815653e821f, type: 3}
 --- !u!114 &1320138676339754374
 MonoBehaviour:
   m_ObjectHideFlags: 0

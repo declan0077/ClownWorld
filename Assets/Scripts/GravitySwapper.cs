@@ -37,6 +37,8 @@ public class GravitySwapper : MonoBehaviour
                     isrotating = true;
                     player.GetComponent<BoxCollider2D>().enabled = false;
                     AudioPlayer.PlayOneShot(Change);
+                    player.GetComponent<PlayerMovement>().baseSpeed = 0;
+                    player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 }
             }
         }
@@ -58,6 +60,8 @@ public class GravitySwapper : MonoBehaviour
                 player.GetComponent<BoxCollider2D>().enabled = true;
                 rotate = false;
                 isrotating = false;
+
+                player.GetComponent<PlayerMovement>().baseSpeed = 6000;
             }
         }
     }
