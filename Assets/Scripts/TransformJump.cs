@@ -24,7 +24,7 @@ public class TransformJump : MonoBehaviour
         {
             velocity = 0;
         }
-
+        /*
         if (Input.GetKeyDown(KeyCode.Space) && groundCheck.isGrounded)
         {
             velocity = jumpForce;
@@ -32,7 +32,7 @@ public class TransformJump : MonoBehaviour
             // Apply squash-and-stretch effect
             StartCoroutine(SquashAndStretch());
         }
-
+        */
         transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);
     }
     IEnumerator SquashAndStretch()
