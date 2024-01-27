@@ -19,29 +19,35 @@ public class GravitySwapper : MonoBehaviour
     {
         AudioPlayer = GetComponent<AudioSource>();
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!Waitplease)
+        if (Input.GetKey(KeyCode.E))
         {
-            StartCoroutine(Wait());
-            if (collision.gameObject.CompareTag("Player"))
+            if (!Waitplease)
             {
-                if (isrotating == false)
+                StartCoroutine(Wait());
+                if (collision.gameObject.CompareTag("Player"))
                 {
-                    
-                    playerTransform = collision.transform;
-                    player = collision.gameObject;
-                    targetAngle = playerTransform.eulerAngles.z + angle;
-                    rotate = true;
-                    collision.gameObject.GetComponent<TransformJump>().gravityScale = 0;
-                    isrotating = true;
-                    player.GetComponent<BoxCollider2D>().enabled = false;
-                    AudioPlayer.PlayOneShot(Change);
-                    player.GetComponent<PlayerMovement>().baseSpeed = 0;
-                    player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    if (isrotating == false)
+                    {
+
+                        playerTransform = collision.transform;
+                        player = collision.gameObject;
+                        targetAngle = playerTransform.eulerAngles.z + angle;
+                        rotate = true;
+                        collision.gameObject.GetComponent<TransformJump>().gravityScale = 0;
+                        isrotating = true;
+                        player.GetComponent<BoxCollider2D>().enabled = false;
+                        AudioPlayer.PlayOneShot(Change);
+                        player.GetComponent<PlayerMovement>().baseSpeed = 0;
+                        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    }
                 }
             }
         }
+       
        
     }
 
