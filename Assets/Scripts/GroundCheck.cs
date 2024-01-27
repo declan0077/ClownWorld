@@ -6,32 +6,21 @@ public class GroundCheck : MonoBehaviour
     public float distanceToCheck = 0.5f;
     public bool isGrounded;
     public LayerMask Floor;
+    //Ignore
     public float coyoteTime = 0.2f;
 
-    private void Update()
-    {
-        if (IsGrounded())
-        {
-            if (!isGrounded)
-            {
-                StartCoroutine(CoyoteTime());
-            }
-        }
-        else
-        {
-            StopCoroutine(CoyoteTime());
-        }
-    }
 
-    IEnumerator CoyoteTime()
+    public void Update()
     {
-        isGrounded = true;
-        yield return new WaitForSeconds(coyoteTime);
-        isGrounded = false;
+        isGrounded = IsGrounded();
+
+
     }
 
     bool IsGrounded()
     {
-        return Physics2D.Raycast(transform.position, Vector2.down, distanceToCheck, Floor);
+        Vector2 rayDirection = transform.TransformDirection(Vector2.down);
+        return Physics2D.Raycast(transform.position, rayDirection, distanceToCheck, Floor);
     }
+
 }

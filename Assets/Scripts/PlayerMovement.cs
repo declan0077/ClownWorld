@@ -10,10 +10,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform SpawnPos;
     private GroundCheck check;
+
+    private SpriteRenderer spriteRenderer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-   
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
    
     void Update()
@@ -35,8 +37,19 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = Vector2.zero;
             GetComponent<TransformJump>().enabled = true;
         }
- 
 
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            spriteRenderer.flipX = false; 
+        
+        }
+
+        // Check for left movement (A key)
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            spriteRenderer.flipX = true; 
+            
+        }
         if (rb.velocity.magnitude > 1)
         {
             GetComponent<TransformJump>().enabled = true;
