@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7889ca70a7159439a5def932e2e7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 6000
+  baseSpeed: 6013
   SpawnPos: {fileID: 0}
   Collected: 0
   emote: {fileID: 7690761596890317924}

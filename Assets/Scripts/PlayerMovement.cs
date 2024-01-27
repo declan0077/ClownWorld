@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
+        bool Upsidedown = false ;
         if (Collected <= 5)
         {
             Debug.Log("GameOver");
@@ -36,11 +36,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(0, 0, 180))) < threshold)
         {
-            movementDirection = transform.right;
+            movementDirection = -transform.right;
+            Upsidedown = true;
         }
         else
         {
             movementDirection = transform.right;
+            Upsidedown = false;
         }
 
         // Apply movement in the determined direction
@@ -74,16 +76,31 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            spriteRenderer.flipX = false;
+
+            if (Upsidedown == true)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+
+                spriteRenderer.flipX = false;
+            }
         
         }
 
         // Check for left movement (A key)
         if (Input.GetKeyDown(KeyCode.A))
         {
-            spriteRenderer.flipX = true;
-        
-
+           
+            if (Upsidedown == true)
+            {
+                spriteRenderer.flipX = false;
+            }
+            else
+            {
+                spriteRenderer.flipX = true;
+            }
         }
         if (rb.velocity.magnitude > 1)
         {
