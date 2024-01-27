@@ -10,22 +10,36 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private Transform SpawnPos;
     private GroundCheck check;
-
+    private Animator animator;
     private SpriteRenderer spriteRenderer;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
    
     void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
+        Vector3 movementDirection;
+        float threshold = 5f;  // You can adjust this value as needed
 
-        Vector2 movement = new Vector2(horizontalInput, 0) * baseSpeed * Time.deltaTime;
+        if (Mathf.Abs(Quaternion.Angle(transform.rotation, Quaternion.Euler(0, 0, 180))) < threshold)
+        {
+            movementDirection = transform.right;
+        }
+        else
+        {
+            movementDirection = transform.right;
+        }
+
+        // Apply movement in the determined direction
+        rb.velocity = movementDirection * horizontalInput * baseSpeed * Time.deltaTime;
+
 
         //Can you change this to a force based method
-        transform.Translate(movement);
+        // transform.Translate(movement);
 
         if (Mathf.Approximately(horizontalInput, 0f))
         {
@@ -34,21 +48,33 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
         {
+
             rb.velocity = Vector2.zero;
             GetComponent<TransformJump>().enabled = true;
         }
 
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            animator.SetBool("Moving", true);
+        }
+        else
+        {
+            animator.SetBool("Moving", false);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.D))
         {
-            spriteRenderer.flipX = false; 
+            spriteRenderer.flipX = false;
         
         }
 
         // Check for left movement (A key)
         if (Input.GetKeyDown(KeyCode.A))
         {
-            spriteRenderer.flipX = true; 
-            
+            spriteRenderer.flipX = true;
+        
+
         }
         if (rb.velocity.magnitude > 1)
         {
