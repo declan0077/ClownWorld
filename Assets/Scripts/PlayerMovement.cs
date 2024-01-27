@@ -19,9 +19,14 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
-   
+
     void Update()
     {
+
+        if (Collected <= 5)
+        {
+            Debug.Log("GameOver");
+        }
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movementDirection;
         float threshold = 5f;  // You can adjust this value as needed

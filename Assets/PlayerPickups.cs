@@ -16,7 +16,7 @@ public class PlayerPickups : MonoBehaviour
             audioPlayer.Play();
             var player = collision.gameObject;
             player.GetComponent<PlayerMovement>().Collected += 1;
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,1 );
         }
         
 
