@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 444b70e3b56fcec4e9f1855568802a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToCheck: 1.2
+  distanceToCheck: 2
   isGrounded: 0
   Floor:
     serializedVersion: 2
@@ -333,5 +333,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c7889ca70a7159439a5def932e2e7e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1200
+  baseSpeed: 6000
   SpawnPos: {fileID: 0}
