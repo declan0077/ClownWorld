@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77e10c825059aa947abfbb14ae0be1a2
+guid: d1fd29865b6611848856e62f740a4fd2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,64 +110,64 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown idol sprites_0
+      name: clown idol updated_0
       rect:
         serializedVersion: 2
         x: 0
         y: 3002
         width: 3002
         height: 3002
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5c3d0e8da369b4f90a2cc7eb649f97
-      internalID: 215341841
+      spriteID: 834af4c9e44bd6a49aa976ba277744e2
+      internalID: 1293078073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown idol sprites_1
+      name: clown idol updated_1
       rect:
         serializedVersion: 2
         x: 3002
         y: 3002
         width: 3002
         height: 3002
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b2442ebe627fa943a14e8b9f2556735
-      internalID: -469685997
+      spriteID: 5892bf095d3e9b44ab7237df37f657f0
+      internalID: -2052991659
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown idol sprites_2
+      name: clown idol updated_2
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 3002
         height: 3002
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6aed1fa57e79d044a76f5836189f079
-      internalID: 2031354600
+      spriteID: ba23ba565b4d6d04c9a7bb4ebba32450
+      internalID: 2018637133
       vertices: []
       indices: 
       edges: []
@@ -183,9 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown idol sprites_0: 215341841
-      clown idol sprites_1: -469685997
-      clown idol sprites_2: 2031354600
+      clown idol updated_0: 1293078073
+      clown idol updated_1: -2052991659
+      clown idol updated_2: 2018637133
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

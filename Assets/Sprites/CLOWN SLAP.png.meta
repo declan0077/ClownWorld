@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f8c1144d3c86c6745aba783762dbb8de
+guid: 6fad07a44c9fa514f9202af2a3166a83
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: clown walk sprites_0
+      name: CLOWN SLAP_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e05de1bceaec2f4ab83e7ffd238c0a6
-      internalID: -2684679
+      spriteID: d427b2dca4611d047bf757c9f4b54485
+      internalID: 2123653503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown walk sprites_1
+      name: CLOWN SLAP_1
       rect:
         serializedVersion: 2
         x: 3002
@@ -145,35 +145,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98a45aec1005b28478fc9b91a79df84e
-      internalID: 52860669
+      spriteID: c81c0d70137ab9248a5ad3d7c7414521
+      internalID: 1521595665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: clown walk sprites_2
-      rect:
-        serializedVersion: 2
-        x: 6004
-        y: 3002
-        width: 3002
-        height: 3002
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e43bfca3c2483c4c8adba8efd10fc77
-      internalID: -1392872249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: clown walk sprites_3
+      name: CLOWN SLAP_2
       rect:
         serializedVersion: 2
         x: 0
@@ -187,29 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e483e091366da8347b340b6ca0f4e6b6
-      internalID: -1498206108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: clown walk sprites_4
-      rect:
-        serializedVersion: 2
-        x: 3002
-        y: 0
-        width: 3002
-        height: 3002
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a13231118dbfc114c9645efa01a6153a
-      internalID: -877982954
+      spriteID: 61aad1869ed876140b98b2ec4780149c
+      internalID: -1544768885
       vertices: []
       indices: 
       edges: []
@@ -225,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      clown walk sprites_0: -2684679
-      clown walk sprites_1: 52860669
-      clown walk sprites_2: -1392872249
-      clown walk sprites_3: -1498206108
-      clown walk sprites_4: -877982954
+      CLOWN SLAP_0: 2123653503
+      CLOWN SLAP_1: 1521595665
+      CLOWN SLAP_2: -1544768885
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
