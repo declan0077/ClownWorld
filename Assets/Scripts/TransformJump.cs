@@ -8,11 +8,15 @@ public class TransformJump : MonoBehaviour
     public float gravity = -9.81f;
     public float gravityScale = 5;
     float velocity;
+    private AudioSource AudioPlayer;
+    [SerializeField]
+    private AudioClip Jump;
+
    
     Vector3 originalScaleAll; // Variable to store the original scale
     void Start()
     {
-    
+        AudioPlayer = GetComponent<AudioSource>();
         originalScaleAll = transform.localScale; // Store the original scale
     }
 
@@ -31,6 +35,7 @@ public class TransformJump : MonoBehaviour
             groundCheck.isGrounded = true;
             // Apply squash-and-stretch effect
             // StartCoroutine(SquashAndStretch());
+            AudioPlayer.PlayOneShot(Jump);
         }
         
         transform.Translate(new Vector3(0, velocity, 0) * Time.deltaTime);

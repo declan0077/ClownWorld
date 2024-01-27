@@ -13,6 +13,12 @@ public class GravitySwapper : MonoBehaviour
     private GameObject player;
     private bool isrotating;
     private bool Waitplease = false;
+    private AudioSource AudioPlayer;
+    public AudioClip Change;
+    private void Start()
+    {
+        AudioPlayer = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!Waitplease)
@@ -30,6 +36,7 @@ public class GravitySwapper : MonoBehaviour
                     collision.gameObject.GetComponent<TransformJump>().gravityScale = 0;
                     isrotating = true;
                     player.GetComponent<BoxCollider2D>().enabled = false;
+                    AudioPlayer.PlayOneShot(Change);
                 }
             }
         }
