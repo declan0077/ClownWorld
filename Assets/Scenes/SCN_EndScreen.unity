@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -279, y: 215.55707}
-  m_SizeDelta: {x: -850.4245, y: -454.1141}
+  m_AnchoredPosition: {x: -177.14, y: 215.55707}
+  m_SizeDelta: {x: -646.71, y: -454.1141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14486964
 MonoBehaviour:
@@ -216,7 +216,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -699,8 +699,9 @@ MonoBehaviour:
   backgroundImage_OnLose: {fileID: 21300000, guid: 78248f14dc8764e469ec15e1d527efe6,
     type: 3}
   backgroundComponent: {fileID: 852692906}
-  victoryText: {fileID: 0}
-  timerText: {fileID: 0}
+  victoryText: {fileID: 14486964}
+  nameInput: {fileID: 1688586758}
+  leaderboard: {fileID: 69858717}
 --- !u!1 &641907464
 GameObject:
   m_ObjectHideFlags: 0

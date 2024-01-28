@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Image))]
 public class SCR_Timer : MonoBehaviour
 {
-    [Range(60f, 300f)]
+    [Range(5f, 300f)]
     public float timeRemaining = 180.0f;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private Transform clockHand;

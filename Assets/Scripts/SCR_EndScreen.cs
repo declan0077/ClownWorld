@@ -11,6 +11,7 @@ public class SCR_EndScreen : MonoBehaviour
     [Header("Component reference")]
     [SerializeField] private Image backgroundComponent;
     [SerializeField] private TextMeshProUGUI victoryText;
+    [SerializeField] private GameObject nameInput;
     [SerializeField] private GameObject leaderboard;
     public float currentScore { get; private set; }
     public string playerName { get; private set; }
@@ -19,16 +20,19 @@ public class SCR_EndScreen : MonoBehaviour
     void Start()
     {
         currentScore = PlayerPrefs.GetFloat("Time");
+        Debug.Log(currentScore);
 
         if (currentScore > 0f)
         {
             backgroundComponent.sprite = backgroundImage_OnWin;
             victoryText.text = "You Win!";
+            nameInput.SetActive(true);
             leaderboard.SetActive(true);
         } else
         {
             backgroundComponent.sprite = backgroundImage_OnLose;
             victoryText.text = "You Lose...";
+            nameInput.SetActive(false);
             leaderboard.SetActive(false);
         }
     }
