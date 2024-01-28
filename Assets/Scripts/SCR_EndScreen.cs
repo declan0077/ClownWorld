@@ -12,7 +12,7 @@ public class SCR_EndScreen : MonoBehaviour
     [Header("Component reference")]
     [SerializeField] private Image backgroundComponent;
 
-    private float currentScore;
+    public float currentScore;
 
     // Start is called before the first frame update
     void Start()
