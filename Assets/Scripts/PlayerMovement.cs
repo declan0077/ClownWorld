@@ -15,8 +15,15 @@ public class PlayerMovement : MonoBehaviour
     public int Collected;
     [SerializeField]
     public GameObject emote;
+    bool Upsidedown = false;
+    bool isright = false;
+    public float shootingForce = 50;
+    public float raycastDistance = 50;
+
+    public LayerMask LinerayMask;
     void Start()
     {
+     
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
@@ -25,8 +32,14 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        bool Upsidedown = false ;
-        if (Collected <= 5)
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            animator.SetTrigger("Strike");
+
+            StartCoroutine(Wait());
+        }
+    
+        if (Collected >= 5)
         {
             Debug.Log("GameOver");
         }
@@ -76,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-
+            isright = false;
             if (Upsidedown == true)
             {
                 spriteRenderer.flipX = true;
@@ -92,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         // Check for left movement (A key)
         if (Input.GetKeyDown(KeyCode.A))
         {
-           
+            isright = true;
             if (Upsidedown == true)
             {
                 spriteRenderer.flipX = false;
@@ -106,9 +119,37 @@ public class PlayerMovement : MonoBehaviour
         {
             GetComponent<TransformJump>().enabled = true;
         }
-      
+
     }
-    public void restartLevel()
+    IEnumerator Wait()
+    {
+  
+        yield return new WaitForSeconds(0.5f);
+        ShootRaycast();
+
+    }
+    private void ShootRaycast()
+    {
+        Vector2 direction = isright ? -transform.right : transform.right;
+        Vector2 endPoint = (Vector2)transform.position + direction * raycastDistance;
+        RaycastHit2D linecastHit = Physics2D.Linecast(transform.position, endPoint, LinerayMask);
+
+       // Debug.DrawLine(transform.position, endPoint, Color.red, 1f);
+
+        if (linecastHit.collider != null)
+        {
+            Debug.Log(linecastHit.collider.gameObject);
+            Rigidbody2D rigidbody2D = linecastHit.collider.GetComponent<Rigidbody2D>();
+
+            if (rigidbody2D != null)
+            {
+                Vector2 velocity = direction * shootingForce;
+                rigidbody2D.velocity = velocity;
+            }
+        }
+    }
+
+public void restartLevel()
     {
        //GameOver stuff
     }
@@ -144,5 +185,22 @@ public class PlayerMovement : MonoBehaviour
             }
         }
         */
+       
     }
+
+    void OnDrawGizmos()
+    {
+        // Get player direction based on Upsidedown status
+        Vector2 direction = isright ? -transform.right : transform.right;
+
+        // Define the end point for the linecast
+        Vector2 endPoint = (Vector2)transform.position + direction * raycastDistance;
+
+        // Set the Gizmo color
+        Gizmos.color = Color.red;
+
+        // Draw a line from the player's position to the end point
+        Gizmos.DrawLine(transform.position, endPoint);
+    }
+
 }
