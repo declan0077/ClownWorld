@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class SCR_EndScreen : MonoBehaviour
 {
@@ -12,11 +11,8 @@ public class SCR_EndScreen : MonoBehaviour
 
     [Header("Component reference")]
     [SerializeField] private Image backgroundComponent;
-    [SerializeField] private TextMeshProUGUI victoryText;
-    [SerializeField] private TextMeshProUGUI timerText;
 
-    public float currentScore { get; private set; }
-    public string playerName { get; private set; }
+    public float currentScore;
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +22,9 @@ public class SCR_EndScreen : MonoBehaviour
         if (currentScore > 0f)
         {
             backgroundComponent.sprite = backgroundImage_OnWin;
-            victoryText.text = "You Win!";
         } else
         {
             backgroundComponent.sprite = backgroundImage_OnLose;
-            victoryText.text = "You Lose...";
         }
     }
 }
