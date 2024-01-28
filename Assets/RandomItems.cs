@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomItems : MonoBehaviour
 {
     public GameObject[] objects;
+    public Sprite[] sprites;
     void Start()
     {
         ActivateRandomFiveObjects();
@@ -24,6 +25,7 @@ public class RandomItems : MonoBehaviour
             if (objects[i] != null)
             {
                 objects[i].SetActive(true);
+                objects[i].GetComponent<SpriteRenderer>().sprite = sprites[i];
             }
         }
     }
