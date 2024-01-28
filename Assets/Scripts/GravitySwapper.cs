@@ -26,7 +26,7 @@ public class GravitySwapper : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             player = collision.gameObject;
-            player.GetComponent<PlayerMovement>().emote.SetActive(true);
+            
             if (Input.GetKey(KeyCode.E))
             {
                 if (!Waitplease)
@@ -49,16 +49,10 @@ public class GravitySwapper : MonoBehaviour
                     }
                 
                 }
-                else
-                {
-                    player.GetComponent<PlayerMovement>().emote.SetActive(false);
-                }
+              
             }
         }
-        else
-        {
-            player.GetComponent<PlayerMovement>().emote.SetActive(false);
-        }
+        
     }
 
 

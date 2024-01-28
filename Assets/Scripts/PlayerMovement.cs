@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Private info")]
     private Rigidbody2D rb;
     [SerializeField]
-    private Transform SpawnPos;
+    private Vector3 SpawnPos;
     private GroundCheck check;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -23,13 +23,27 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask LinerayMask;
     void Start()
     {
-     
+        SpawnPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         baseSpeed = 6000;
+        StartCoroutine(WaitSpeed());
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grav"))
+        {
+            emote.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Grav"))
+        {
+            emote.SetActive(false);
+        }
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -86,7 +100,10 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("Moving", false);
         }
 
-
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            transform.position = SpawnPos;
+        }
         if (Input.GetKeyDown(KeyCode.D))
         {
             isright = false;
@@ -128,25 +145,58 @@ public class PlayerMovement : MonoBehaviour
         ShootRaycast();
 
     }
+    IEnumerator WaitSpeed()
+    {
+
+        yield return new WaitForSeconds(0.6f);
+        baseSpeed = 6001;
+
+    }
     private void ShootRaycast()
     {
-        Vector2 direction = isright ? -transform.right : transform.right;
-        Vector2 endPoint = (Vector2)transform.position + direction * raycastDistance;
-        RaycastHit2D linecastHit = Physics2D.Linecast(transform.position, endPoint, LinerayMask);
-
-       // Debug.DrawLine(transform.position, endPoint, Color.red, 1f);
-
-        if (linecastHit.collider != null)
+        if (Upsidedown)
         {
-            Debug.Log(linecastHit.collider.gameObject);
-            Rigidbody2D rigidbody2D = linecastHit.collider.GetComponent<Rigidbody2D>();
+            Vector2 direction = isright ? transform.right : -transform.right;
+            Vector2 endPoint = (Vector2)transform.position + direction * raycastDistance;
+            RaycastHit2D linecastHit = Physics2D.Linecast(transform.position, endPoint, LinerayMask);
 
-            if (rigidbody2D != null)
+            // Debug.DrawLine(transform.position, endPoint, Color.red, 1f);
+
+            if (linecastHit.collider != null)
             {
-                Vector2 velocity = direction * shootingForce;
-                rigidbody2D.velocity = velocity;
+                Debug.Log(linecastHit.collider.gameObject);
+                Rigidbody2D rigidbody2D = linecastHit.collider.GetComponent<Rigidbody2D>();
+
+                if (rigidbody2D != null)
+                {
+                    Vector2 velocity = direction * shootingForce;
+                    rigidbody2D.velocity = velocity;
+                }
             }
         }
+        else
+        {
+
+            Vector2 direction = isright ? -transform.right : transform.right;
+            Vector2 endPoint = (Vector2)transform.position + direction * raycastDistance;
+            RaycastHit2D linecastHit = Physics2D.Linecast(transform.position, endPoint, LinerayMask);
+
+            // Debug.DrawLine(transform.position, endPoint, Color.red, 1f);
+
+            if (linecastHit.collider != null)
+            {
+                Debug.Log(linecastHit.collider.gameObject);
+                Rigidbody2D rigidbody2D = linecastHit.collider.GetComponent<Rigidbody2D>();
+
+                if (rigidbody2D != null)
+                {
+                    Vector2 velocity = direction * shootingForce;
+                    rigidbody2D.velocity = velocity;
+                }
+            }
+        }
+     
+     
     }
 
 public void restartLevel()
