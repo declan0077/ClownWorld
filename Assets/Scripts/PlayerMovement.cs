@@ -44,6 +44,7 @@ public class PlayerMovement : MonoBehaviour
         if (!hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
         {
             hitStunned = true;
+            baseSpeed = 600;
             StartCoroutine(hitStunScript.HitStun());
         }
     }
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
         {
+            baseSpeed = 6000;
             hitStunned = false;
         }
     }
