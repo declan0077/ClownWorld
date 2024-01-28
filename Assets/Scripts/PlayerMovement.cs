@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private GroundCheck check;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
+    private SCR_HitStun hitStunScript;
+    private bool hitStunned;
     public int Collected;
     [SerializeField]
     public GameObject emote;
@@ -27,7 +29,10 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        hitStunScript = GetComponent<SCR_HitStun>();
+
         baseSpeed = 6000;
+        hitStunned = false;
         StartCoroutine(WaitSpeed());
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -36,12 +41,21 @@ public class PlayerMovement : MonoBehaviour
         {
             emote.SetActive(true);
         }
+        if (!hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
+        {
+            hitStunned = true;
+            StartCoroutine(hitStunScript.HitStun());
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Grav"))
         {
             emote.SetActive(false);
+        }
+        if (hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
+        {
+            hitStunned = false;
         }
     }
     void Update()

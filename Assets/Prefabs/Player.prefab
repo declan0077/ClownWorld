@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 374104473491552599}
   - component: {fileID: 3709994313490575264}
   - component: {fileID: 2666583262151544119}
+  - component: {fileID: -5346581922752866281}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 5993
-  SpawnPos: {fileID: 0}
+  SpawnPos: {x: 0, y: 0, z: 0}
   Collected: 0
   emote: {fileID: 7690761596890317924}
   shootingForce: 100
@@ -442,6 +443,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5346581922752866281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4302564442664193575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236e9bd7ee8cc644fa209ddbce7c0792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunDuration: 1.5
+  flashCount: 3
+  flashColor: {r: 1, g: 1, b: 1, a: 0.19607843}
 --- !u!1 &5890014715869803505
 GameObject:
   m_ObjectHideFlags: 0
