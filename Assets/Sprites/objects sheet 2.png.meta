@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 935d215d817c882478f555645fab4a21
+guid: b5ee144c139ed244180cd9f2ca1c7946
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 600
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: objects sheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 3433
+        width: 1504
+        height: 2248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d8c2203ff31364d8d153e8576b1107
+      internalID: -221387409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects sheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 3912
+        y: 3134
+        width: 1156
+        height: 2573
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 385a4f72d9f609546a9e696715b7d0b5
+      internalID: 1197581717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects sheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 6326
+        y: 4128
+        width: 1917
+        height: 981
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c8ed13209721e458903918e363f10f
+      internalID: -717740732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects sheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 785
+        width: 941
+        height: 1592
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74f02eb788960dd429507f95b85ea038
+      internalID: -741538006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects sheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 3410
+        y: 737
+        width: 1878
+        height: 1390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765ee188e0a94224484b7d9cdd846b97
+      internalID: 1893634284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: objects sheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 6352
+        y: 715
+        width: 1948
+        height: 857
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 789893c9197d73f4da69d7dcf0e501f3
+      internalID: 1993714860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +245,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      objects sheet 2_0: -221387409
+      objects sheet 2_1: 1197581717
+      objects sheet 2_2: -717740732
+      objects sheet 2_3: -741538006
+      objects sheet 2_4: 1893634284
+      objects sheet 2_5: 1993714860
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

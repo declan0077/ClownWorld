@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
         {
             emote.SetActive(true);
         }
-        if (!hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
+        if (!hitStunned && hitStunScript != null && collision.gameObject.CompareTag("AI"))
         {
             hitStunned = true;
             baseSpeed = 600;
@@ -54,9 +54,9 @@ public class PlayerMovement : MonoBehaviour
         {
             emote.SetActive(false);
         }
-        if (hitStunned && hitStunScript != null && collision.gameObject.CompareTag("Obstacle"))
+        if (hitStunned && hitStunScript != null && collision.gameObject.CompareTag("AI"))
         {
-            baseSpeed = 6000;
+            StartCoroutine(WaitSpeedSlow());
             hitStunned = false;
         }
     }
@@ -166,6 +166,13 @@ public class PlayerMovement : MonoBehaviour
     {
 
         yield return new WaitForSeconds(0.6f);
+        baseSpeed = 6001;
+
+    }
+    IEnumerator WaitSpeedSlow()
+    {
+
+        yield return new WaitForSeconds(3f);
         baseSpeed = 6001;
 
     }
