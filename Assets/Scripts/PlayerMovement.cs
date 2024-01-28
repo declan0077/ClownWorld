@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         if (Collected >= 5)
         {
             Debug.Log("GameOver");
+            SCR_GameStateManager.Instance.EndGame(true);
         }
         float horizontalInput = Input.GetAxis("Horizontal");
         Vector3 movementDirection;

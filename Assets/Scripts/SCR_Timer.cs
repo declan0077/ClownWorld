@@ -1,18 +1,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.Events;
 [RequireComponent(typeof(Image))]
-public class Timer : MonoBehaviour
+public class SCR_Timer : MonoBehaviour
 {
     [Range(60f, 300f)]
-    public float timeRemaining = 180.0f; //3 minutes
+    public float timeRemaining = 180.0f;
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private Transform clockHand;
-    
+
     private Image circleImage;
 
-    private float currentTimer;
+    public float currentTimer { get; private set; }
 
     void Start()
     {
@@ -33,7 +33,8 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            // on end
+            print(SCR_GameStateManager.Instance);
+            SCR_GameStateManager.Instance.EndGame(false);
         }
     }
 
